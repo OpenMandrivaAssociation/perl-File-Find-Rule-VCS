@@ -1,5 +1,5 @@
 %define realname   File-Find-Rule-VCS
-%define version    1.04
+%define version    1.05
 %define release    %mkrel 1
 
 Name:       perl-%{realname}
