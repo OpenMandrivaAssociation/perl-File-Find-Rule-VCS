@@ -1,23 +1,22 @@
-%define realname   File-Find-Rule-VCS
-%define version    1.06
-%define release    %mkrel 1
+%define upstream_name    File-Find-Rule-VCS
+%define upstream_version 1.06
 
-Name:       perl-%{realname}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
-Group:      Development/Perl
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:    Exclude files/directories for Version Control Systems
-Source:     http://www.cpan.org/modules/by-module/File/%{realname}-%{version}.tar.gz
-Url:        http://search.cpan.org/dist/%{realname}
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: perl-devel
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/File/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires: perl(ExtUtils::MakeMaker)
 BuildRequires: perl(File::Find::Rule)
 BuildRequires: perl(File::Spec)
 BuildRequires: perl(Test::More)
-
 BuildArch: noarch
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Many tools need to be equally useful both on ordinary files, and on code
@@ -28,7 +27,7 @@ the version control directories of several major Version Control Systems
 (currently CVS, subversion, and Bazaar).
 
 %prep
-%setup -q -n %{realname}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
