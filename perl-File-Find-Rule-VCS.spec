@@ -1,5 +1,5 @@
 %define upstream_name    File-Find-Rule-VCS
-%define upstream_version 1.07
+%define upstream_version 1.08
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
