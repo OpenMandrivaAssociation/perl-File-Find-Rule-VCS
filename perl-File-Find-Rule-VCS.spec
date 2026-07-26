@@ -1,15 +1,13 @@
 %define upstream_name    File-Find-Rule-VCS
-%define upstream_version 1.09
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	1.09
+Release:	2
 
 Summary:	Exclude files/directories for Version Control Systems
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/karenetheridge/File-Find-Rule-VCS
-Source0:	https://cpan.metacpan.org/authors/id/E/ET/ETHER/File-Find-Rule-VCS-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/E/ET/ETHER/File-Find-Rule-VCS-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -28,7 +26,7 @@ the version control directories of several major Version Control Systems
 (currently CVS, subversion, and Bazaar).
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -60,8 +58,7 @@ make test
 
 * Tue Jul 28 2009 Jérôme Quelin <jquelin@mandriva.org> 1.60.0-1mdv2010.0
 + Revision: 401664
-- rebuild using %%perl_convert_version
-- fixed license field
+- rebuild using %1.09 fixed license field
 
 * Thu Jul 09 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.06-1mdv2010.0
 + Revision: 393792
